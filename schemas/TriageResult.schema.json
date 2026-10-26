@@ -1,0 +1,51 @@
+{
+  "$defs": {
+    "UseRecommendation": {
+      "additionalProperties": false,
+      "properties": {
+        "use_id": {
+          "title": "Use Id",
+          "type": "string"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "use_id",
+        "reason"
+      ],
+      "title": "UseRecommendation",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "readable": {
+      "title": "Readable",
+      "type": "boolean"
+    },
+    "recommendations": {
+      "items": {
+        "$ref": "#/$defs/UseRecommendation"
+      },
+      "title": "Recommendations",
+      "type": "array"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Limitations",
+      "type": "array"
+    }
+  },
+  "required": [
+    "readable",
+    "recommendations",
+    "limitations"
+  ],
+  "title": "TriageResult",
+  "type": "object"
+}

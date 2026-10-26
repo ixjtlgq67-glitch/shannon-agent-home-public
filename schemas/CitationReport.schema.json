@@ -1,0 +1,100 @@
+{
+  "$defs": {
+    "CitationCheck": {
+      "additionalProperties": false,
+      "properties": {
+        "statement_location": {
+          "title": "Statement Location",
+          "type": "string"
+        },
+        "accepted_judgment_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Accepted Judgment Ids",
+          "type": "array"
+        },
+        "status": {
+          "enum": [
+            "supported",
+            "unsupported",
+            "overstated",
+            "unverified"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "evidence": {
+          "title": "Evidence",
+          "type": "string"
+        }
+      },
+      "required": [
+        "statement_location",
+        "accepted_judgment_ids",
+        "status",
+        "evidence"
+      ],
+      "title": "CitationCheck",
+      "type": "object"
+    },
+    "Finding": {
+      "additionalProperties": false,
+      "properties": {
+        "location": {
+          "title": "Location",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "info",
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "evidence": {
+          "title": "Evidence",
+          "type": "string"
+        },
+        "recommendation": {
+          "title": "Recommendation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "location",
+        "severity",
+        "evidence",
+        "recommendation"
+      ],
+      "title": "Finding",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "checks": {
+      "items": {
+        "$ref": "#/$defs/CitationCheck"
+      },
+      "title": "Checks",
+      "type": "array"
+    },
+    "findings": {
+      "items": {
+        "$ref": "#/$defs/Finding"
+      },
+      "title": "Findings",
+      "type": "array"
+    }
+  },
+  "required": [
+    "checks",
+    "findings"
+  ],
+  "title": "CitationReport",
+  "type": "object"
+}

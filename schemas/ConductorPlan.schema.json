@@ -1,0 +1,56 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "selected_use_ids": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 3,
+      "title": "Selected Use Ids",
+      "type": "array"
+    },
+    "include_skeptic": {
+      "const": true,
+      "title": "Include Skeptic",
+      "type": "boolean"
+    },
+    "include_concept": {
+      "title": "Include Concept",
+      "type": "boolean"
+    },
+    "planned_model_calls": {
+      "minimum": 1,
+      "title": "Planned Model Calls",
+      "type": "integer"
+    },
+    "retry_role_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Retry Role Ids",
+      "type": "array"
+    },
+    "skipped_use_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Skipped Use Ids",
+      "type": "array"
+    },
+    "rationale": {
+      "title": "Rationale",
+      "type": "string"
+    }
+  },
+  "required": [
+    "selected_use_ids",
+    "include_skeptic",
+    "include_concept",
+    "planned_model_calls",
+    "retry_role_ids",
+    "skipped_use_ids",
+    "rationale"
+  ],
+  "title": "ConductorPlan",
+  "type": "object"
+}
