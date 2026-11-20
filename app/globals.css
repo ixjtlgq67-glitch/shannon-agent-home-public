@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f3ecdf;
+  --paper-2: #e7dfd0;
+  --ink: #1e1a16;
+  --ink-soft: #5e564c;
+  --line: #d5cbbd;
+  --seal: #8f2d24;
+  --seal-ink: #fff8f2;
+  --moss: #1f4d3a;
+  --brass: #8a6232;
+  --card: #fbf7f0;
+  --mark: #f0d9a6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #141210;
+    --paper-2: #221e1a;
+    --ink: #f4eee4;
+    --ink-soft: #cbbfae;
+    --line: #3c342c;
+    --seal: #e07a68;
+    --seal-ink: #1a1210;
+    --moss: #9ddec0;
+    --brass: #e0b56a;
+    --card: #1c1815;
+    --mark: #5c4520;
+  }
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+  --color-seal: var(--seal);
+  --color-seal-ink: var(--seal-ink);
+  --color-moss: var(--moss);
+  --color-brass: var(--brass);
+  --color-card: var(--card);
+  --color-mark: var(--mark);
+  --font-sans: var(--font-outfit), "Segoe UI", sans-serif;
+  --font-serif: var(--font-fraunces), Georgia, serif;
+  --font-quote: var(--font-newsreader), Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+@layer base {
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+  }
+
+  a { color: inherit; }
+
+  ::selection { background: var(--mark); color: var(--ink); }
+}
+
+.rule { background: linear-gradient(90deg, transparent, var(--line), transparent); height: 1px; }
+
+mark {
+  background: var(--mark);
+  color: inherit;
+  padding: 0 0.12em;
+}

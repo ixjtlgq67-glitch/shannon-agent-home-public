@@ -1,0 +1,1 @@
+globalThis.SHANNON_ORIGIN = "";

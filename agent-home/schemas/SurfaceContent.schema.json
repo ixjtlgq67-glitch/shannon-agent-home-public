@@ -1,0 +1,61 @@
+{
+  "$defs": {
+    "ContentBlock": {
+      "additionalProperties": false,
+      "properties": {
+        "screen_or_topic": {
+          "title": "Screen Or Topic",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "next_action": {
+          "title": "Next Action",
+          "type": "string"
+        },
+        "feature_status": {
+          "enum": [
+            "implemented",
+            "planned",
+            "unverified"
+          ],
+          "title": "Feature Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "screen_or_topic",
+        "text",
+        "next_action",
+        "feature_status"
+      ],
+      "title": "ContentBlock",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "blocks": {
+      "items": {
+        "$ref": "#/$defs/ContentBlock"
+      },
+      "title": "Blocks",
+      "type": "array"
+    },
+    "open_questions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Open Questions",
+      "type": "array"
+    }
+  },
+  "required": [
+    "blocks",
+    "open_questions"
+  ],
+  "title": "SurfaceContent",
+  "type": "object"
+}

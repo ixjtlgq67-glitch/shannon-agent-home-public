@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Save to Shannon",
+  "description": "Save the page you are reading to Shannon in one click.",
+  "version": "0.1.0",
+  "action": {
+    "default_title": "Save to Shannon",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["activeTab", "scripting", "storage", "contextMenus", "notifications"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "commands": {
+    "save-page": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "Command+Shift+S"
+      },
+      "description": "Save to Shannon"
+    }
+  }
+}

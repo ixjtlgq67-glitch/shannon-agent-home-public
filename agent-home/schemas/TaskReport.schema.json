@@ -1,0 +1,147 @@
+{
+  "$defs": {
+    "Artifact": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "title": "Path",
+          "type": "string"
+        },
+        "content": {
+          "title": "Content",
+          "type": "string"
+        },
+        "purpose": {
+          "title": "Purpose",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "content",
+        "purpose"
+      ],
+      "title": "Artifact",
+      "type": "object"
+    },
+    "Finding": {
+      "additionalProperties": false,
+      "properties": {
+        "location": {
+          "title": "Location",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "info",
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "evidence": {
+          "title": "Evidence",
+          "type": "string"
+        },
+        "recommendation": {
+          "title": "Recommendation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "location",
+        "severity",
+        "evidence",
+        "recommendation"
+      ],
+      "title": "Finding",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "task_id": {
+      "title": "Task Id",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "proposed",
+        "blocked",
+        "complete"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "summary": {
+      "title": "Summary",
+      "type": "string"
+    },
+    "assigned_worker": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Assigned Worker"
+    },
+    "artifacts": {
+      "items": {
+        "$ref": "#/$defs/Artifact"
+      },
+      "title": "Artifacts",
+      "type": "array"
+    },
+    "acceptance_criteria": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Acceptance Criteria",
+      "type": "array"
+    },
+    "findings": {
+      "items": {
+        "$ref": "#/$defs/Finding"
+      },
+      "title": "Findings",
+      "type": "array"
+    },
+    "tests_actually_run": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Tests Actually Run",
+      "type": "array"
+    },
+    "open_questions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Open Questions",
+      "type": "array"
+    },
+    "next_action": {
+      "title": "Next Action",
+      "type": "string"
+    }
+  },
+  "required": [
+    "task_id",
+    "status",
+    "summary",
+    "assigned_worker",
+    "artifacts",
+    "acceptance_criteria",
+    "findings",
+    "tests_actually_run",
+    "open_questions",
+    "next_action"
+  ],
+  "title": "TaskReport",
+  "type": "object"
+}

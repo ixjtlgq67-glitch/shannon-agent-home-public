@@ -1,0 +1,15 @@
+{
+  "user_id": "demo-user",
+  "source_id": "synthetic-article",
+  "source_version": "v1",
+  "paragraphs": [
+    {
+      "id": "p1",
+      "text": "This fictional workshop uses a human review step before saving a judgment."
+    },
+    {
+      "id": "p2",
+      "text": "The imaginary pilot has not measured time savings."
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "$defs": {
+    "Paragraph": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "text": {
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "text"
+      ],
+      "title": "Paragraph",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "user_id": {
+      "minLength": 1,
+      "title": "User Id",
+      "type": "string"
+    },
+    "source_id": {
+      "minLength": 1,
+      "title": "Source Id",
+      "type": "string"
+    },
+    "source_version": {
+      "minLength": 1,
+      "title": "Source Version",
+      "type": "string"
+    },
+    "paragraphs": {
+      "items": {
+        "$ref": "#/$defs/Paragraph"
+      },
+      "minItems": 1,
+      "title": "Paragraphs",
+      "type": "array"
+    }
+  },
+  "required": [
+    "user_id",
+    "source_id",
+    "source_version",
+    "paragraphs"
+  ],
+  "title": "FrozenSource",
+  "type": "object"
+}

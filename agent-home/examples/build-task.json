@@ -1,0 +1,13 @@
+{
+  "task_id": "example-review-card",
+  "human_owner": "Demo Human",
+  "approved_task": "Specify a review card that shows an exact quotation, paragraph locator, pending state, and separate accept/reject actions.",
+  "owned_paths": [
+    "docs/review-card-spec.md"
+  ],
+  "implementation_status": "planned",
+  "acceptance_criteria": [
+    "Only a signed-in human can decide.",
+    "No register entry before acceptance."
+  ]
+}

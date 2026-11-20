@@ -1,0 +1,120 @@
+{
+  "$defs": {
+    "Proposal": {
+      "additionalProperties": false,
+      "properties": {
+        "proposal_id": {
+          "minLength": 1,
+          "title": "Proposal Id",
+          "type": "string"
+        },
+        "user_id": {
+          "minLength": 1,
+          "title": "User Id",
+          "type": "string"
+        },
+        "source_id": {
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "source_version": {
+          "minLength": 1,
+          "title": "Source Version",
+          "type": "string"
+        },
+        "quote": {
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        },
+        "paragraph_id": {
+          "minLength": 1,
+          "title": "Paragraph Id",
+          "type": "string"
+        },
+        "judgment": {
+          "minLength": 1,
+          "title": "Judgment",
+          "type": "string"
+        },
+        "reasoning": {
+          "minLength": 1,
+          "title": "Reasoning",
+          "type": "string"
+        },
+        "role_id": {
+          "minLength": 1,
+          "title": "Role Id",
+          "type": "string"
+        },
+        "use_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Use Id"
+        },
+        "model_id": {
+          "minLength": 1,
+          "title": "Model Id",
+          "type": "string"
+        },
+        "prompt_version": {
+          "minLength": 1,
+          "title": "Prompt Version",
+          "type": "string"
+        },
+        "exploration": {
+          "title": "Exploration",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "proposal_id",
+        "user_id",
+        "source_id",
+        "source_version",
+        "quote",
+        "paragraph_id",
+        "judgment",
+        "reasoning",
+        "role_id",
+        "use_id",
+        "model_id",
+        "prompt_version",
+        "exploration"
+      ],
+      "title": "Proposal",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "proposals": {
+      "items": {
+        "$ref": "#/$defs/Proposal"
+      },
+      "maxItems": 2,
+      "title": "Proposals",
+      "type": "array"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Limitations",
+      "type": "array"
+    }
+  },
+  "required": [
+    "proposals",
+    "limitations"
+  ],
+  "title": "ProposalBatch",
+  "type": "object"
+}

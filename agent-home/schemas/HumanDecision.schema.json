@@ -1,0 +1,45 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "proposal_id": {
+      "title": "Proposal Id",
+      "type": "string"
+    },
+    "user_id": {
+      "title": "User Id",
+      "type": "string"
+    },
+    "human_name": {
+      "minLength": 1,
+      "title": "Human Name",
+      "type": "string"
+    },
+    "action": {
+      "enum": [
+        "accept",
+        "reject"
+      ],
+      "title": "Action",
+      "type": "string"
+    },
+    "reason": {
+      "title": "Reason",
+      "type": "string"
+    },
+    "decided_at": {
+      "minLength": 1,
+      "title": "Decided At",
+      "type": "string"
+    }
+  },
+  "required": [
+    "proposal_id",
+    "user_id",
+    "human_name",
+    "action",
+    "reason",
+    "decided_at"
+  ],
+  "title": "HumanDecision",
+  "type": "object"
+}
