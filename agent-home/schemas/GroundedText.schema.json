@@ -1,0 +1,55 @@
+{
+  "$defs": {
+    "GroundedStatement": {
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "accepted_judgment_ids": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Accepted Judgment Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "text",
+        "accepted_judgment_ids"
+      ],
+      "title": "GroundedStatement",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "statements": {
+      "items": {
+        "$ref": "#/$defs/GroundedStatement"
+      },
+      "title": "Statements",
+      "type": "array"
+    },
+    "gaps": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Gaps",
+      "type": "array"
+    }
+  },
+  "required": [
+    "title",
+    "statements",
+    "gaps"
+  ],
+  "title": "GroundedText",
+  "type": "object"
+}

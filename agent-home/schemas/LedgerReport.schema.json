@@ -1,0 +1,98 @@
+{
+  "$defs": {
+    "Metric": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Value"
+        },
+        "numerator": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Numerator"
+        },
+        "denominator": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Denominator"
+        },
+        "explanation": {
+          "title": "Explanation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "value",
+        "numerator",
+        "denominator",
+        "explanation"
+      ],
+      "title": "Metric",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "metrics": {
+      "items": {
+        "$ref": "#/$defs/Metric"
+      },
+      "title": "Metrics",
+      "type": "array"
+    },
+    "included_event_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Included Event Ids",
+      "type": "array"
+    },
+    "unknown_event_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Unknown Event Ids",
+      "type": "array"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Limitations",
+      "type": "array"
+    }
+  },
+  "required": [
+    "metrics",
+    "included_event_ids",
+    "unknown_event_ids",
+    "limitations"
+  ],
+  "title": "LedgerReport",
+  "type": "object"
+}
